@@ -13,7 +13,7 @@ function fibonacci_number(input){
     console.log(results)
 } 
 */
-
+/* 
 function fibonacci_number(input){
     let num_one = input.start[0];
     let num_two = input.start[1];
@@ -29,5 +29,15 @@ function fibonacci_number(input){
     }
     console.log(results)
 }
+ */
 
-fibonacci_number({start: [0,1], length: 10})
+function fibonacci_number(input){
+    let next = null;
+    while( input.series.length <= input.length) {
+        next =  input.series[0] +  input.series[1];
+        input.series.unshift(next)
+    }
+    console.log(input.series)
+} 
+
+fibonacci_number({series: [0,1], length: 10})
