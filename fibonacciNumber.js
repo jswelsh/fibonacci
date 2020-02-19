@@ -30,7 +30,7 @@ function fibonacci_number(input){
     console.log(results)
 }
  */
-
+/* 
 function fibonacci_number(input){
     let next = null;
     while( input.series.length <= input.length) {
@@ -39,5 +39,15 @@ function fibonacci_number(input){
     }
     console.log(input.series)
 } 
+ */
 
+function fibonacci_number(input){
+    while( input.series.length <= input.length) {
+        input.series.unshift(input.series[0] +  input.series[1]);
+    }
+    console.log(input.series);
+    document.write(input.series);
+}
+
+fibonacci_number({series: [1,0], length: 8})
 fibonacci_number({series: [0,1], length: 10})
