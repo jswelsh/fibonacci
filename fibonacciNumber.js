@@ -57,7 +57,7 @@ function fibonacci_number(input){
 fibonacci_number({series: [1,0], length: 8})
 fibonacci_number({series: [0,1], length: 10})
  */
-
+/* 
 function fibonacci_number(input){
     for(let count = 0; count <= input.iterations; ++count) {
         input.sequence[0] += input.sequence[1]
@@ -70,6 +70,19 @@ function fibonacci_number(input){
     //console.log(input.sequence[1]);
     document.write(input.sequence[1]);
 }
+ */
+//input starting point and how many iteration
+
+function fibonacci_number(input){
+    if(input.iterations >= 0) {
+        input.sequence[0] ^= input.sequence[1] 
+        input.sequence[1] ^= input.sequence[0]
+        input.sequence[0] ^= input.sequence[1]
+        input.sequence[1] += input.sequence[0]
+        fibonacci_number({sequence:[input.sequence[0], input.sequence[1]], iterations: input.iterations - 1})
+    }
+    (input.iterations === 0) && document.write(input.sequence[1]);
+} //
 
 
 fibonacci_number({sequence: [0,1], iterations: 10})
